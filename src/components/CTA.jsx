@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export function CTA() {
   return (
     <section className="bg-primary-light px-4 py-12 md:px-8 md:py-16 lg:px-16 lg:py-20 xl:px-24">
@@ -8,12 +10,12 @@ export function CTA() {
           <span className="hidden md:inline"> </span>
           l'aventure ?
         </h2>
-        <a
-          href="#rejoindre"
+        <Link
+          to="/register"
           className="inline-block rounded-lg bg-primary px-8 py-3 font-display text-base font-semibold text-white transition-all duration-300 hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/30 active:scale-95 md:px-10 md:py-4 md:text-lg"
         >
           Rejoindre ComSmart
-        </a>
+        </Link>
       </div>
     </section>
   );

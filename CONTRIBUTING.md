@@ -43,8 +43,11 @@ src/
 │   └── Footer.jsx
 │
 ├── pages/          # Pages (cibles des routes)
-│   └── Landing/
-│       └── Landing.jsx
+│   ├── Landing/
+│   │   └── Landing.jsx
+│   └── Auth/
+│       ├── Login.jsx
+│       └── Register.jsx
 │
 ├── routes/         # Configuration du routeur
 │   └── index.jsx
@@ -167,15 +170,25 @@ Les routes sont definies dans `src/routes/index.jsx`:
 
 ```jsx
 import { createBrowserRouter } from "react-router";
+import { Landing } from "../pages/Landing/Landing";
+import { Login } from "../pages/Auth/Login";
+import { Register } from "../pages/Auth/Register";
 
 export const routes = createBrowserRouter([
-  {
-    index: true,
-    Component: Landing,
-  },
+  { index: true, Component: Landing },
+  { path: "/login", Component: Login },
+  { path: "/register", Component: Register },
   // Ajouter les nouvelles routes ici
 ]);
 ```
+
+### Routes actuelles
+
+| Route | Page | Description |
+|-------|------|-------------|
+| `/` | Landing | Page d'accueil |
+| `/login` | Login | Connexion utilisateur |
+| `/register` | Register | Inscription utilisateur |
 
 ## Assets
 
@@ -198,7 +211,7 @@ export function About() {
     </div>
   );
 }
-o-Au
+
 // src/routes/index.jsx
 import { About } from "../pages/About/About";
 
@@ -206,6 +219,48 @@ export const routes = createBrowserRouter([
   { index: true, Component: Landing },
   { path: "about", Component: About },
 ]);
+```
+
+## Layout Split-Screen (Pages Auth)
+
+Les pages d'authentification utilisent un layout responsive split-screen:
+
+### Structure
+
+```jsx
+<div className="flex min-h-screen">
+  {/* Panneau gauche - Branding (masque sur mobile) */}
+  <div className="hidden lg:flex lg:w-1/2 xl:w-[55%]">
+    {/* Contenu branding */}
+  </div>
+
+  {/* Panneau droit - Formulaire */}
+  <div className="flex w-full flex-col lg:w-1/2 xl:w-[45%]">
+    {/* Formulaire */}
+  </div>
+</div>
+```
+
+### Comportement responsive
+
+| Breakpoint | Panneau Branding | Panneau Formulaire |
+|------------|------------------|-------------------|
+| Mobile (< 1024px) | Masque (`hidden`) | 100% (`w-full`) |
+| lg (>= 1024px) | 50% (`lg:w-1/2`) | 50% (`lg:w-1/2`) |
+| xl (>= 1280px) | 55% (`xl:w-[55%]`) | 45% (`xl:w-[45%]`) |
+
+### Elements conditionnels
+
+```jsx
+{/* Logo visible uniquement sur mobile */}
+<div className="lg:hidden">
+  <img src="/logo.png" />
+</div>
+
+{/* Logo visible uniquement sur desktop (dans le panneau) */}
+<div className="hidden lg:flex">
+  <img src="/logo.png" />
+</div>
 ```
 
 ## Ajout d'un nouveau composant
