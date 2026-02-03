@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export function Hero() {
   return (
     <section className="px-4 pb-8 pt-6 md:px-8 md:py-12 lg:px-16 lg:py-16 xl:px-24">
@@ -20,18 +22,18 @@ export function Hero() {
           </p>
 
           <div className="flex items-center justify-center gap-3 md:justify-start">
-            <a
-              href="#rejoindre"
+            <Link
+              to="/register"
               className="rounded-lg bg-primary px-6 py-2.5 font-display text-sm font-semibold text-white transition-all duration-300 hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25 active:scale-95 md:px-8 md:py-3"
             >
               Rejoindre
-            </a>
-            <a
-              href="#connexion"
+            </Link>
+            <Link
+              to="/login"
               className="rounded-lg bg-primary-light px-6 py-2.5 font-display text-sm font-semibold text-primary transition-all duration-300 hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/25 active:scale-95 md:px-8 md:py-3"
             >
               Se connecter
-            </a>
+            </Link>
           </div>
         </div>
 
