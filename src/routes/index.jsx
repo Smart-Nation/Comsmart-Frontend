@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router";
-import { HelloWorld } from "../pages/HelloWorld/HelloWorld";
+import { Landing } from "../pages/Landing/Landing";
 
 /**
  * @type {import("react-router").RouteObject[]}
@@ -7,6 +7,6 @@ import { HelloWorld } from "../pages/HelloWorld/HelloWorld";
 export const routes = createBrowserRouter([
   {
     index: true,
-    Component: HelloWorld,
+    Component: Landing,
   },
 ]);
