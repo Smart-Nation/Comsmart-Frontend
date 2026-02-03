@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router";
-import { Eye, EyeSlash, Rocket, ShieldCheck, Lightning } from "@phosphor-icons/react";
+import {
+  Eye,
+  EyeSlash,
+  Rocket,
+  ShieldCheck,
+  Lightning,
+} from "@phosphor-icons/react";
 
 export function Register() {
   const [email, setEmail] = useState("");
@@ -17,48 +23,51 @@ export function Register() {
     <div className="flex min-h-screen">
       {/* Left Panel - Branding (hidden on mobile) */}
       <div className="hidden lg:flex lg:w-1/2 xl:w-[55%]">
-        <div className="relative flex w-full flex-col justify-between overflow-hidden bg-gradient-to-br from-accent via-accent-dark to-accent p-12 xl:p-16">
+        <div className="bg-gradient-to-br from-accent via-accent-dark to-accent xl:p-16 relative flex flex-col justify-between w-full p-12 overflow-hidden">
           {/* Background decorative elements */}
-          <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-white/5"></div>
-          <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-white/5"></div>
-          <div className="absolute right-1/4 top-1/3 h-40 w-40 rounded-full bg-primary/20"></div>
+          <div className="-right-20 -top-20 h-80 w-80 bg-white/5 absolute rounded-full"></div>
+          <div className="-bottom-32 -left-32 h-96 w-96 bg-white/5 absolute rounded-full"></div>
+          <div className="right-1/4 top-1/3 bg-primary/20 absolute w-40 h-40 rounded-full"></div>
 
           {/* Logo */}
           <Link to="/" className="relative z-10 flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white">
-              <img src="/logo.png" alt="" className="h-8 w-8" />
+            <div className="flex items-center justify-center w-12 h-12 bg-white rounded-full">
+              <img src="/logo.png" alt="" className="w-8 h-8" />
             </div>
-            <span className="font-display text-2xl font-bold text-white">ComSmart</span>
+            <span className="font-display text-2xl font-bold text-white">
+              ComSmart
+            </span>
           </Link>
 
           {/* Main content */}
           <div className="relative z-10 my-auto">
-            <h2 className="mb-6 font-display text-4xl font-bold leading-tight text-white xl:text-5xl">
+            <h2 className="font-display xl:text-5xl mb-6 text-4xl font-bold leading-tight text-white">
               Rejoins une
               <br />
               communaute active
             </h2>
-            <p className="max-w-md text-lg text-white/80">
-              Des centaines de developpeurs partagent deja leurs projets, evenements et ressources.
+            <p className="text-white/80 max-w-md text-lg">
+              Des centaines de developpeurs partagent deja leurs projets,
+              evenements et ressources.
             </p>
 
             {/* Features list */}
             <div className="mt-10 space-y-4">
-              <div className="flex items-center gap-4 text-white/90">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10">
-                  <Rocket weight="duotone" className="h-5 w-5" />
+              <div className="text-white/90 flex items-center gap-4">
+                <div className="bg-white/10 flex items-center justify-center w-10 h-10 rounded-lg">
+                  <Rocket weight="duotone" className="w-5 h-5" />
                 </div>
                 <span>Lance-toi en quelques secondes</span>
               </div>
-              <div className="flex items-center gap-4 text-white/90">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10">
-                  <ShieldCheck weight="duotone" className="h-5 w-5" />
+              <div className="text-white/90 flex items-center gap-4">
+                <div className="bg-white/10 flex items-center justify-center w-10 h-10 rounded-lg">
+                  <ShieldCheck weight="duotone" className="w-5 h-5" />
                 </div>
                 <span>Tes donnees restent privees</span>
               </div>
-              <div className="flex items-center gap-4 text-white/90">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10">
-                  <Lightning weight="duotone" className="h-5 w-5" />
+              <div className="text-white/90 flex items-center gap-4">
+                <div className="bg-white/10 flex items-center justify-center w-10 h-10 rounded-lg">
+                  <Lightning weight="duotone" className="w-5 h-5" />
                 </div>
                 <span>100% gratuit, sans engagement</span>
               </div>
@@ -66,7 +75,7 @@ export function Register() {
           </div>
 
           {/* Footer */}
-          <p className="relative z-10 text-sm text-white/60">
+          <p className="text-white/60 relative z-10 text-sm">
             © 2026 ComSmart. Tous droits reserves.
           </p>
         </div>
@@ -74,30 +83,33 @@ export function Register() {
 
       {/* Right Panel - Form */}
       <div className="flex w-full flex-col bg-white px-6 py-8 lg:w-1/2 lg:px-12 xl:w-[45%] xl:px-20">
-        <div className="flex flex-1 flex-col lg:justify-center lg:py-12">
+        <div className="lg:justify-center lg:py-12 flex flex-col flex-1">
           {/* Logo (mobile only) */}
-          <div className="flex items-center justify-center gap-2 lg:hidden">
-            <img src="/logo.png" alt="" className="h-8 w-8" />
+          <div className="lg:hidden flex items-center justify-center gap-2">
+            <img src="/logo.png" alt="" className="w-8 h-8" />
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text font-display text-xl font-bold text-transparent">
               ComSmart
             </span>
           </div>
 
           {/* Header */}
-          <div className="mt-8 text-center lg:mt-0 lg:text-left">
-            <h1 className="font-display text-2xl font-bold text-text-title lg:text-3xl">
+          <div className="lg:mt-0 lg:text-left mt-8 text-center">
+            <h1 className="font-display text-text-title lg:text-3xl text-2xl font-bold">
               Rejoins la communaute
             </h1>
-            <p className="mt-2 text-base text-text-secondary">
+            <p className="text-text-secondary mt-2 text-base">
               Cree ton compte en quelques secondes
             </p>
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-5 lg:max-w-md">
+          <form
+            onSubmit={handleSubmit}
+            className="lg:max-w-md flex flex-col gap-5 mt-8"
+          >
             {/* Email Field */}
             <div className="flex flex-col gap-2">
-              <label className="text-base font-medium text-text-title">
+              <label className="text-text-title text-base font-medium">
                 Email <span className="text-primary">*</span>
               </label>
               <input
@@ -106,13 +118,13 @@ export function Register() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="ton@email.com"
                 required
-                className="rounded-lg border border-gray-200 px-4 py-3 text-base text-text-body placeholder:text-text-secondary focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                className="text-text-body placeholder:text-text-secondary focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary px-4 py-3 text-base border border-gray-200 rounded-lg"
               />
             </div>
 
             {/* Password Field */}
             <div className="flex flex-col gap-2">
-              <label className="text-base font-medium text-text-title">
+              <label className="text-text-title text-base font-medium">
                 Mot de passe <span className="text-primary">*</span>
               </label>
               <div className="relative">
@@ -123,21 +135,23 @@ export function Register() {
                   placeholder="••••••••"
                   required
                   minLength={8}
-                  className="w-full rounded-lg border border-gray-200 px-4 py-3 pr-12 text-base text-text-body placeholder:text-text-secondary focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                  className="text-text-body placeholder:text-text-secondary focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary w-full px-4 py-3 pr-12 text-base border border-gray-200 rounded-lg"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-text-secondary transition-colors hover:text-text-body"
+                  className="right-4 top-1/2 text-text-secondary hover:text-text-body absolute transition-colors -translate-y-1/2"
                 >
                   {showPassword ? (
-                    <Eye className="h-5 w-5" />
+                    <Eye className="w-5 h-5" />
                   ) : (
-                    <EyeSlash className="h-5 w-5" />
+                    <EyeSlash className="w-5 h-5" />
                   )}
                 </button>
               </div>
-              <p className="text-sm text-text-secondary">Minimum 8 caracteres</p>
+              <p className="text-text-secondary text-sm">
+                Minimum 8 caracteres
+              </p>
             </div>
 
             {/* Submit Button */}
@@ -149,11 +163,11 @@ export function Register() {
             </button>
 
             {/* Terms */}
-            <p className="text-center text-sm text-text-secondary lg:text-left">
+            <p className="text-text-secondary lg:text-left text-sm text-center">
               En creant un compte, tu acceptes nos{" "}
               <a
                 href="/conditions"
-                className="font-medium text-primary underline transition-colors hover:text-primary-dark"
+                className="text-primary hover:text-primary-dark font-medium underline transition-colors"
               >
                 Conditions d'utilisation
               </a>
@@ -161,10 +175,10 @@ export function Register() {
           </form>
 
           {/* Divider */}
-          <div className="mt-6 flex items-center gap-4 lg:max-w-md">
-            <div className="h-px flex-1 bg-gray-200"></div>
-            <span className="text-sm text-text-secondary">ou</span>
-            <div className="h-px flex-1 bg-gray-200"></div>
+          <div className="lg:max-w-md flex items-center gap-4 mt-6">
+            <div className="flex-1 h-px bg-gray-200"></div>
+            <span className="text-text-secondary text-sm">ou</span>
+            <div className="flex-1 h-px bg-gray-200"></div>
           </div>
 
           {/* Google Button */}
@@ -177,11 +191,11 @@ export function Register() {
           </button>
 
           {/* Login Link */}
-          <p className="mt-auto pt-8 text-center text-sm text-text-secondary lg:max-w-md lg:pt-10 lg:text-left">
+          <p className="text-text-secondary lg:max-w-md lg:pt-10 lg:text-left pt-8 mt-auto text-sm text-center">
             Deja membre ?{" "}
             <Link
               to="/login"
-              className="font-medium text-primary underline transition-colors hover:text-primary-dark"
+              className="text-primary hover:text-primary-dark font-medium underline transition-colors"
             >
               Se connecter
             </Link>

@@ -2,21 +2,20 @@ import { Quotes } from "@phosphor-icons/react";
 
 export function Testimonial() {
   return (
-    <section className="px-4 py-10 md:px-8 md:py-16 lg:px-16 lg:py-20 xl:px-24">
-      <div className="mx-auto max-w-3xl text-center">
+    <section className="md:px-8 md:py-16 lg:px-16 lg:py-20 xl:px-24 px-4 py-10">
+      <div className="max-w-3xl mx-auto text-center">
         <Quotes
           weight="fill"
-          className="mx-auto mb-4 h-10 w-10 text-accent transition-transform duration-500 hover:scale-125 md:h-12 md:w-12"
+          className="text-accent hover:scale-125 md:h-12 md:w-12 w-10 h-10 mx-auto mb-4 transition-transform duration-500"
           style={{ animation: "float 3s ease-in-out infinite" }}
         />
-        <blockquote className="mb-4 font-display text-xl font-semibold leading-relaxed text-text-title md:text-2xl lg:text-3xl">
+        <blockquote className="font-display text-text-title md:text-2xl lg:text-3xl mb-4 text-xl font-semibold leading-relaxed">
           Enfin une plateforme ou
           <br className="md:hidden" />
-          <span className="hidden md:inline"> </span>
-          je retrouve tout !
-          <span className="text-accent">"</span>
+          <span className="md:inline hidden"> </span>
+          je retrouve tout !<span className="text-accent">"</span>
         </blockquote>
-        <cite className="text-sm text-text-secondary not-italic md:text-base">
+        <cite className="text-text-secondary md:text-base text-sm not-italic">
           Koffi, Frontend Developer
         </cite>
       </div>

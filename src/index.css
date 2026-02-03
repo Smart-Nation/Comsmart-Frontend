@@ -1,40 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap");
 
 @import "tailwindcss";
 
 @theme {
   /* Colors from design guidelines */
-  --color-primary: #7C3AED;
-  --color-primary-dark: #6D28D9;
-  --color-accent: #F97316;
-  --color-accent-dark: #EA580C;
+  --color-primary: #7c3aed;
+  --color-primary-dark: #6d28d9;
+  --color-accent: #f97316;
+  --color-accent-dark: #ea580c;
 
   /* Text colors */
-  --color-text-title: #18181B;
-  --color-text-body: #52525B;
-  --color-text-secondary: #71717A;
+  --color-text-title: #18181b;
+  --color-text-body: #52525b;
+  --color-text-secondary: #71717a;
 
   /* Utility colors */
-  --color-white: #FFFFFF;
-  --color-gray-50: #FAFAFA;
-  --color-gray-100: #F4F4F5;
-  --color-gray-200: #E4E4E7;
-  --color-primary-light: #EDE9FE;
+  --color-white: #ffffff;
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f4f4f5;
+  --color-gray-200: #e4e4e7;
+  --color-primary-light: #ede9fe;
 
   /* Typography - Fonts */
-  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-family-display: 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-family-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-family-display: "Manrope", system-ui, -apple-system, sans-serif;
 
   /* Typography - Title sizes (Manrope) */
-  --font-size-h1: 2.5rem;      /* 40px */
-  --font-size-h2: 2.125rem;    /* 34px */
-  --font-size-h3: 1.75rem;     /* 28px */
-  --font-size-h4: 1.5rem;      /* 24px */
+  --font-size-h1: 2.5rem; /* 40px */
+  --font-size-h2: 2.125rem; /* 34px */
+  --font-size-h3: 1.75rem; /* 28px */
+  --font-size-h4: 1.5rem; /* 24px */
 
   /* Typography - Body sizes (Inter) */
-  --font-size-body-lg: 1.75rem;  /* 28px */
-  --font-size-body: 1.5rem;      /* 24px - note: will use smaller for mobile */
-  --font-size-body-sm: 1.25rem;  /* 20px */
+  --font-size-body-lg: 1.75rem; /* 28px */
+  --font-size-body: 1.5rem; /* 24px - note: will use smaller for mobile */
+  --font-size-body-sm: 1.25rem; /* 20px */
 
   /* Animations */
   --animate-fade-in: fade-in 0.5s ease-out;
@@ -42,8 +42,12 @@
   --animate-scale-in: scale-in 0.3s ease-out;
 
   @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes slide-up {
@@ -69,7 +73,12 @@
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
   }
 }

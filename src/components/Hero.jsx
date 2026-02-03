@@ -2,10 +2,10 @@ import { Link } from "react-router";
 
 export function Hero() {
   return (
-    <section className="px-4 pb-8 pt-6 md:px-8 md:py-12 lg:px-16 lg:py-16 xl:px-24">
-      <div className="mx-auto flex flex-col items-center gap-8 md:flex-row md:gap-12 lg:gap-16">
+    <section className="md:px-8 md:py-12 lg:px-16 lg:py-16 xl:px-24 px-4 pt-6 pb-8">
+      <div className="md:flex-row md:gap-12 lg:gap-16 flex flex-col items-center gap-8 mx-auto">
         {/* Text content */}
-        <div className="animate-slide-up text-center md:flex-1 md:text-left">
+        <div className="animate-slide-up md:flex-1 md:text-left text-center">
           <h1 className="mb-4 font-display text-[2rem] font-bold leading-tight text-text-title md:text-[2.5rem] lg:text-[3rem]">
             <span className="text-accent">ComSmart</span>,
             <br />
@@ -13,7 +13,7 @@ export function Hero() {
             <br />
             developpeurs
           </h1>
-          <p className="mx-auto mb-6 max-w-md text-sm text-text-body md:mx-0 md:text-base lg:text-lg">
+          <p className="text-text-body md:mx-0 md:text-base lg:text-lg max-w-md mx-auto mb-6 text-sm">
             Fini le chaos de Whatsapp...
             <br />
             Evenements, annonces et ressources
@@ -21,7 +21,7 @@ export function Hero() {
             au meme endroit
           </p>
 
-          <div className="flex items-center justify-center gap-3 md:justify-start">
+          <div className="md:justify-start flex items-center justify-center gap-3">
             <Link
               to="/register"
               className="rounded-lg bg-primary px-6 py-2.5 font-display text-sm font-semibold text-white transition-all duration-300 hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25 active:scale-95 md:px-8 md:py-3"

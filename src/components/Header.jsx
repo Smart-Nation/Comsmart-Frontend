@@ -2,13 +2,13 @@ import { Link } from "react-router";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-white/95 shadow-sm backdrop-blur-sm">
-      <div className="mx-auto flex items-center justify-between px-4 py-3 md:px-8 lg:px-16 xl:px-24">
+    <header className="bg-white/95 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+      <div className="md:px-8 lg:px-16 xl:px-24 flex items-center justify-between px-4 py-3 mx-auto">
         <Link to="/">
           <img
             src="/logo.png"
             alt="ComSmart"
-            className="h-8 w-8 transition-transform duration-300 hover:scale-110 md:h-10 md:w-10"
+            className="hover:scale-110 md:h-10 md:w-10 w-8 h-8 transition-transform duration-300"
           />
         </Link>
         <Link

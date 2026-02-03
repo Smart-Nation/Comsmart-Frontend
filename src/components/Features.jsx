@@ -26,13 +26,13 @@ const features = [
 
 export function Features() {
   return (
-    <section className="px-4 py-10 md:px-8 md:py-16 lg:px-16 lg:py-20 xl:px-24">
+    <section className="md:px-8 md:py-16 lg:px-16 lg:py-20 xl:px-24 px-4 py-10">
       <div className="mx-auto">
         <h2 className="mb-8 text-center font-display text-2xl font-semibold text-text-title md:mb-12 md:text-[2.125rem]">
           Pourquoi <span className="text-accent">ComSmart</span> ?
         </h2>
 
-        <div className="space-y-4 md:grid md:grid-cols-3 md:gap-6 md:space-y-0 lg:gap-8">
+        <div className="md:grid md:grid-cols-3 md:gap-6 md:space-y-0 lg:gap-8 space-y-4">
           {features.map((feature) => (
             <FeatureCard key={feature.title} {...feature} />
           ))}
@@ -45,13 +45,20 @@ export function Features() {
 function FeatureCard({ icon, title, description, bgColor, iconColor }) {
   const IconComponent = icon;
   return (
-    <div className="group flex items-start gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg md:p-6">
-      <div className={`flex-shrink-0 rounded-lg ${bgColor} p-3 transition-transform duration-300 group-hover:scale-110 md:p-4`}>
-        <IconComponent weight="duotone" className={`h-6 w-6 ${iconColor} md:h-7 md:w-7`} />
+    <div className="group rounded-xl hover:-translate-y-1 hover:shadow-lg md:p-6 flex items-start gap-4 p-4 transition-all duration-300 bg-white border border-gray-200 shadow-sm">
+      <div
+        className={`flex-shrink-0 rounded-lg ${bgColor} p-3 transition-transform duration-300 group-hover:scale-110 md:p-4`}
+      >
+        <IconComponent
+          weight="duotone"
+          className={`h-6 w-6 ${iconColor} md:h-7 md:w-7`}
+        />
       </div>
       <div>
-        <h3 className="mb-1 font-display font-semibold text-text-title md:text-lg">{title}</h3>
-        <p className="text-sm text-text-body md:text-base">{description}</p>
+        <h3 className="font-display text-text-title md:text-lg mb-1 font-semibold">
+          {title}
+        </h3>
+        <p className="text-text-body md:text-base text-sm">{description}</p>
       </div>
     </div>
   );
