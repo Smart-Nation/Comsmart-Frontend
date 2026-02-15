@@ -3,41 +3,31 @@ import { Link } from "react-router";
 import {
   Eye,
   EyeSlash,
-  Users,
-  CalendarCheck,
-  Megaphone,
+  Rocket,
+  ShieldCheck,
+  Lightning,
 } from "@phosphor-icons/react";
-import { useAuth } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
 
-
-export function Login() {
+export function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const { login } = useAuth();
-const navigate = useNavigate();
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Implement login logic
-    console.log("Login:", { email, password });
-    login({ name: email }); // on ajoute
-
-  navigate("/events"); // redirection
+    // TODO: Implement register logic
+    console.log("Register:", { email, password });
   };
 
   return (
     <div className="flex min-h-screen">
       {/* Left Panel - Branding (hidden on mobile) */}
       <div className="hidden lg:flex lg:w-1/2 xl:w-[55%]">
-        <div className="bg-gradient-to-br from-primary via-primary-dark to-primary xl:p-16 relative flex flex-col justify-between w-full p-12 overflow-hidden">
+        <div className="bg-gradient-to-br from-accent via-accent-dark to-accent xl:p-16 relative flex flex-col justify-between w-full p-12 overflow-hidden">
           {/* Background decorative elements */}
           <div className="-right-20 -top-20 h-80 w-80 bg-white/5 absolute rounded-full"></div>
           <div className="-bottom-32 -left-32 h-96 w-96 bg-white/5 absolute rounded-full"></div>
-          <div className="right-1/4 top-1/3 bg-accent/20 absolute w-40 h-40 rounded-full"></div>
+          <div className="right-1/4 top-1/3 bg-primary/20 absolute w-40 h-40 rounded-full"></div>
 
           {/* Logo */}
           <Link to="/" className="relative z-10 flex items-center gap-3">
@@ -52,34 +42,34 @@ const navigate = useNavigate();
           {/* Main content */}
           <div className="relative z-10 my-auto">
             <h2 className="font-display xl:text-5xl mb-6 text-4xl font-bold leading-tight text-white">
-              Ta communaute
+              Rejoins une
               <br />
-              t'attend
+              communaute active
             </h2>
             <p className="text-white/80 max-w-md text-lg">
-              Retrouve tes evenements, ressources et discussions au meme
-              endroit.
+              Des centaines de developpeurs partagent deja leurs projets,
+              evenements et ressources.
             </p>
 
             {/* Features list */}
             <div className="mt-10 space-y-4">
               <div className="text-white/90 flex items-center gap-4">
                 <div className="bg-white/10 flex items-center justify-center w-10 h-10 rounded-lg">
-                  <Users weight="duotone" className="w-5 h-5" />
+                  <Rocket weight="duotone" className="w-5 h-5" />
                 </div>
-                <span>Connecte-toi avec ta communaute</span>
+                <span>Lance-toi en quelques secondes</span>
               </div>
               <div className="text-white/90 flex items-center gap-4">
                 <div className="bg-white/10 flex items-center justify-center w-10 h-10 rounded-lg">
-                  <CalendarCheck weight="duotone" className="w-5 h-5" />
+                  <ShieldCheck weight="duotone" className="w-5 h-5" />
                 </div>
-                <span>Ne rate plus aucun evenement</span>
+                <span>Tes donnees restent privees</span>
               </div>
               <div className="text-white/90 flex items-center gap-4">
                 <div className="bg-white/10 flex items-center justify-center w-10 h-10 rounded-lg">
-                  <Megaphone weight="duotone" className="w-5 h-5" />
+                  <Lightning weight="duotone" className="w-5 h-5" />
                 </div>
-                <span>Reste informe des annonces</span>
+                <span>100% gratuit, sans engagement</span>
               </div>
             </div>
           </div>
@@ -105,10 +95,10 @@ const navigate = useNavigate();
           {/* Header */}
           <div className="lg:mt-0 lg:text-left mt-8 text-center">
             <h1 className="font-display text-text-title lg:text-3xl text-2xl font-bold">
-              Bon retour parmi nous
+              Rejoins la communaute
             </h1>
             <p className="text-text-secondary mt-2 text-base">
-              Connecte-toi pour continuer
+              Cree ton compte en quelques secondes
             </p>
           </div>
 
@@ -133,43 +123,55 @@ const navigate = useNavigate();
             </div>
 
             {/* Password Field */}
-<div className="flex flex-col gap-2">
-  <label className="text-text-title text-base font-medium">
-    Mot de passe <span className="text-primary">*</span>
-  </label>
-
-  <div className="relative">
-    <input
-      type={showPassword ? "text" : "password"}
-      value={password}
-      onChange={(e) => setPassword(e.target.value)}
-      placeholder="••••••••"
-      required
-      className="w-full pr-10 text-text-body placeholder:text-text-secondary focus:border-primary"
-    />
-
-    <button
-      type="button"
-      onClick={() => setShowPassword(!showPassword)}
-      className="absolute right-3 top-1/2 -translate-y-1/2 text-text-secondary hover:text-text-body"
-    >
-      {showPassword ? (
-        <EyeSlash className="w-5 h-5" />
-      ) : (
-        <Eye className="w-5 h-5" />
-      )}
-    </button>
-  </div>
-</div>
-
+            <div className="flex flex-col gap-2">
+              <label className="text-text-title text-base font-medium">
+                Mot de passe <span className="text-primary">*</span>
+              </label>
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="••••••••"
+                  required
+                  minLength={8}
+                  className="text-text-body placeholder:text-text-secondary focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary w-full px-4 py-3 pr-12 text-base border border-gray-200 rounded-lg"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="right-4 top-1/2 text-text-secondary hover:text-text-body absolute transition-colors -translate-y-1/2"
+                >
+                  {showPassword ? (
+                    <Eye className="w-5 h-5" />
+                  ) : (
+                    <EyeSlash className="w-5 h-5" />
+                  )}
+                </button>
+              </div>
+              <p className="text-text-secondary text-sm">
+                Minimum 8 caracteres
+              </p>
+            </div>
 
             {/* Submit Button */}
             <button
               type="submit"
               className="mt-2 w-full rounded-lg bg-primary py-4 font-display text-base font-semibold text-white transition-all duration-300 hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25 active:scale-[0.98]"
             >
-              Se connecter
+              Rejoindre ComSmart
             </button>
+
+            {/* Terms */}
+            <p className="text-text-secondary lg:text-left text-sm text-center">
+              En creant un compte, tu acceptes nos{" "}
+              <a
+                href="/conditions"
+                className="text-primary hover:text-primary-dark font-medium underline transition-colors"
+              >
+                Conditions d'utilisation
+              </a>
+            </p>
           </form>
 
           {/* Divider */}
@@ -188,14 +190,14 @@ const navigate = useNavigate();
             Continuer avec Google
           </button>
 
-          {/* Register Link */}
+          {/* Login Link */}
           <p className="text-text-secondary lg:max-w-md lg:pt-10 lg:text-left pt-8 mt-auto text-sm text-center">
-            Pas encore membre ?{" "}
+            Deja membre ?{" "}
             <Link
-              to="/register"
+              to="/login"
               className="text-primary hover:text-primary-dark font-medium underline transition-colors"
             >
-              Creer un compte
+              Se connecter
             </Link>
           </p>
         </div>
