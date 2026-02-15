@@ -82,3 +82,22 @@
     }
   }
 }
+
+/* Main Layout Styles */
+.main-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-container {
+  flex: 1;
+  width: 100%;
+  padding-top: 60px;
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    padding-top: 0;
+    padding-left: 240px;
+  }
+}
