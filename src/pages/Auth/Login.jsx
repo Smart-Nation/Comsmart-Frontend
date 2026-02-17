@@ -7,16 +7,26 @@ import {
   CalendarCheck,
   Megaphone,
 } from "@phosphor-icons/react";
+import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+
 
 export function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  const { login } = useAuth();
+const navigate = useNavigate();
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // TODO: Implement login logic
     console.log("Login:", { email, password });
+    login({ name: email }); // on ajoute
+
+  navigate("/events"); // redirection
   };
 
   return (
@@ -123,32 +133,35 @@ export function Login() {
             </div>
 
             {/* Password Field */}
-            <div className="flex flex-col gap-2">
-              <label className="text-text-title text-base font-medium">
-                Mot de passe <span className="text-primary">*</span>
-              </label>
-              <div className="relative">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="••••••••"
-                  required
-                  className="text-text-body placeholder:text-text-secondary focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary w-full px-4 py-3 pr-12 text-base border border-gray-200 rounded-lg"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="right-4 top-1/2 text-text-secondary hover:text-text-body absolute transition-colors -translate-y-1/2"
-                >
-                  {showPassword ? (
-                    <Eye className="w-5 h-5" />
-                  ) : (
-                    <EyeSlash className="w-5 h-5" />
-                  )}
-                </button>
-              </div>
-            </div>
+<div className="flex flex-col gap-2">
+  <label className="text-text-title text-base font-medium">
+    Mot de passe <span className="text-primary">*</span>
+  </label>
+
+  <div className="relative">
+    <input
+      type={showPassword ? "text" : "password"}
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      placeholder="••••••••"
+      required
+      className="w-full pr-10 text-text-body placeholder:text-text-secondary focus:border-primary"
+    />
+
+    <button
+      type="button"
+      onClick={() => setShowPassword(!showPassword)}
+      className="absolute right-3 top-1/2 -translate-y-1/2 text-text-secondary hover:text-text-body"
+    >
+      {showPassword ? (
+        <EyeSlash className="w-5 h-5" />
+      ) : (
+        <Eye className="w-5 h-5" />
+      )}
+    </button>
+  </div>
+</div>
+
 
             {/* Submit Button */}
             <button

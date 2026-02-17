@@ -1,0 +1,103 @@
+/*FEATURED*/
+
+.event-card.featured {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.event-card.featured .event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-card.featured .event-content {
+  padding: 16px;
+}
+
+.event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-content {
+  padding: 16px;
+}
+
+.event-card.featured .event-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.event-date,
+.event-location,
+.event-places {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 4px 0;
+}
+
+.event-btn {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: #7c3aed;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.event-btn.disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+
+/* COMPACT*/
+.event-card.compact {
+  background: white;
+  border-radius: 14px;
+  padding: 14px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease;
+}
+
+.event-card.compact:hover {
+  transform: translateY(-2px);
+}
+
+.compact-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-card.compact .event-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.event-card.compact .event-date,
+.event-card.compact .event-location {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 2px 0;
+}
+
+.arrow {
+  font-size: 22px;
+  color: #7c3aed;
+  font-weight: bold;
+}
+
+
+
